@@ -16,6 +16,8 @@ footer {
 }
 
 header {
+  position: sticky;
+  top: 0;
   font-family: "Times New Roman", Times, serif;
   background: #fff;
   font-size: 20px;
@@ -28,15 +30,16 @@ header {
 
 
 .leftbar{
-  background: #266351;
+/*  background: #266351;*/
   margin: 10px;
 }
 .main-content {
-  background: #886212;
+/*  background: #886212;*/
+  box-shadow: 0 10px 100px rgba(0,0,0,0.5);
 }
 
 .slidebar{
-  background: #569144;
+/*  background: #569144;*/
   margin: 10px;
 }
 
@@ -52,7 +55,7 @@ footer{
 
 body {
   display: grid;
-  grid-template-columns: 1.2em minmax(300px, 200px) minmax(600px, 650px) minmax(300px, 200px) 1.2em;
+  grid-template-columns: 1.2em minmax(400px, 200px) minmax(600px, 650px) minmax(210px, 200px) 1.2em;
 }
 
 header,
@@ -96,7 +99,7 @@ nav ul li {
 nav ul li a {
   display: block;
   margin: 10px 0;
-  padding: 10px 20px;
+  padding: 10px 10px;
   text-decoration: none;
   color: #5E80B9;
 }
@@ -110,7 +113,7 @@ nav ul li a:hover {
 
 
 .logo {
-  width: 400px;
+  width: 350px;
   height: 100px;
   line-height: 60px;
   padding: 0 20px;
@@ -121,7 +124,6 @@ nav ul li a:hover {
   object-fit: cover;
   box-sizing: border-box;
   float: left;
-  font-width: 700;
 }
 
 .slidebar marquee {
@@ -137,7 +139,25 @@ span:hover {
 
 
 .leftbar img {
-  height: 300px;
-  width: 220px;
+  height: 400px;
+  width: 300px;
   object-fit: cover;
+}
+
+@media screen and (max-device-width: 768px) {
+  body {
+    display: block;
+  }
+
+  .leftbar {
+    text-align: center;
+  }
+
+  .leftbar img {
+    height: 500px;
+    width: 500px;
+    object-fit: cover;    
+  }
+
+
 }
