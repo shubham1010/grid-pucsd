@@ -1,5 +1,25 @@
 
 class LoadMainController extends Stimulus.Controller {
+  connect () {
+ 
+    // default load about's data
+    var main = document.getElementById("main")
+    var ourRequest = new XMLHttpRequest()
+    var path = "https://shubham1010.github.io/jsonfiles/temp/about.json"
+
+    ourRequest.open('GET', path)
+
+
+    ourRequest.onload = ()=> {
+      var data = JSON.parse(ourRequest.responseText)
+      main.innerHTML += data[0].data
+
+    }
+  
+    ourRequest.send()
+
+  }
+
   loadMainData() {
     var main = document.getElementById("main")
     var data
@@ -30,7 +50,7 @@ class LoadMainController extends Stimulus.Controller {
 
       ourRequest.onload = ()=> {
         data = JSON.parse(ourRequest.responseText)
-        main.innerHTML += `<h2> ${data[0].data} </h2>`
+        main.innerHTML += data[0].data
 
       }
       
