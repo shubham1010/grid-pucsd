@@ -55,6 +55,7 @@ class LoadMainController extends Stimulus.Controller {
       }
       
       ourRequest.send()
+      window.scrollBy(0,-50)
 
     }, 0.0001);
   }
