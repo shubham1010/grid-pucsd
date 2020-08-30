@@ -5,14 +5,15 @@ class LoadMainController extends Stimulus.Controller {
     // default load about's data
     var main = document.getElementById("main")
     var ourRequest = new XMLHttpRequest()
-    var path = "https://shubham1010.github.io/jsonfiles/temp/about.json"
+    ourRequest.overrideMimeType("text/html");
+    var path = "https://shubham1010.github.io/jsonfiles/final/about.html"
 
     ourRequest.open('GET', path)
 
 
     ourRequest.onload = ()=> {
-      var data = JSON.parse(ourRequest.responseText)
-      main.innerHTML += data[0].data
+      var data = ourRequest.responseText
+      main.innerHTML += data
 
     }
   
@@ -31,7 +32,8 @@ class LoadMainController extends Stimulus.Controller {
 
 
       var ourRequest = new XMLHttpRequest()
-      var path = "https://shubham1010.github.io/jsonfiles/temp/" + page + ".json"
+      ourRequest.overrideMimeType("text/html");
+      var path = "https://shubham1010.github.io/jsonfiles/final/" + page + ".html"
       var a = document.querySelectorAll("a")
       for (var i=0; i<a.length; i++) {
         if(a[i].className == "active") {
@@ -49,8 +51,8 @@ class LoadMainController extends Stimulus.Controller {
       main.innerHTML = ""
 
       ourRequest.onload = ()=> {
-        data = JSON.parse(ourRequest.responseText)
-        main.innerHTML += data[0].data
+        data = ourRequest.responseText
+        main.innerHTML += data
 
       }
       
