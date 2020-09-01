@@ -134,21 +134,344 @@
 
         $("#contactus").addClass("active")
       });
-/*      
-      $(function() {
-         var allDivs = $(".about")
-        var child = allDivs.children()
-        console.log(child)
-        console.log(child.length)
-        console.log($(".about").html())
-      });
-*/
 
     });
 
+    function clickedPUCSD() {
+
+      var flag = $("#pucsd").css("display");
+      if (flag=="none") {
+        $("#pucsd").css("display","block");   
+
+        $("#hodmsg").css("display","none");
+        $("#howtoreach").css("display","none");
+
+        $("#pucsd").animate({
+          scrollTop: $(window).scrollTop(0)
+        },"slow");
+        
+        $("i", "#pucsdlink").removeClass("fa fa-chevron-down")
+        $("i", "#pucsdlink").addClass("fa fa-chevron-up")
+
+        $("i", "#hodmsglink").addClass("fa fa-chevron-down")
+
+        $("i", "#howtoreachlink").addClass("fa fa-chevron-down")
+
+
+      }
+      else {
+        $("#pucsd").css("display","none");   
+        $("i", "#pucsdlink").removeClass("fa fa-chevron-up")
+        $("i", "#pucsdlink").addClass("fa fa-chevron-down")
+
+      }
+    }
+
+    function clickedHODMSG() {
+      var flag = $("#hodmsg").css("display");
+      if (flag=="none") {
+        $("#hodmsg").css("display","block");
+
+        $("#pucsd").css("display","none");
+        $("#howtoreach").css("display","none");
+
+        $("#hodmsg").animate({
+          scrollTop: $(window).scrollTop(0)
+        },"slow");
+
+        $("i", "#hodmsglink").removeClass("fa fa-chevron-down")
+        $("i", "#hodmsglink").addClass("fa fa-chevron-up")
+
+        $("i", "#howtoreachlink").addClass("fa fa-chevron-down")
+        $("i", "#pucsdlink").addClass("fa fa-chevron-down")
+      }
+      else {
+        $("#hodmsg").css("display","none");   
+        $("i", "#hodmsglink").removeClass("fa fa-chevron-up")
+        $("i", "#hodmsglink").addClass("fa fa-chevron-down")
+      }
+
+    }
+
+    function clickedHowToReach() {
+      var flag = $("#howtoreach").css("display");
+      if (flag=="none") {
+        $("#howtoreach").css("display","block");
+
+
+        $("#pucsd").css("display","none");
+        $("#hodmsg").css("display","none");
+
+        $("#howtoreach").animate({
+          scrollTop: $(window).scrollTop(0)
+        },"slow");
+        $("i", "#howtoreachlink").removeClass("fa fa-chevron-down")
+        $("i", "#howtoreachlink").addClass("fa fa-chevron-up")
+        $("i", "#hodmsglink").addClass("fa fa-chevron-down")
+        $("i", "#pucsdlink").addClass("fa fa-chevron-down")
+
+      }
+      else {
+        $("#howtoreach").css("display","none");   
+        $("i", "#howtoreachlink").removeClass("fa fa-chevron-up")
+        $("i", "#howtoreachlink").addClass("fa fa-chevron-down")
+      }
+
+    }
+
+
+    function antiCell() {
+
+      var flag = $("#antiraggingcell").css("display");
+      if (flag=="none") {
+        $("#antiraggingcell").css("display","block");   
+
+        // hide all other div's except antiragging cell's div
+
+        $("#alumnicell").css("display", "none")
+        $("#placementcell").css("display", "none")
+        $("#sysadscell").css("display", "none")
+        $("#facilitationgroup").css("display", "none")
+
+        $("#antiraggingcell").animate({
+          scrollTop: $(window).scrollTop(0)
+        },"slow");
+        
+        $("i", "#antiraggingcelllink").removeClass("fa fa-chevron-down")
+        $("i", "#antiraggingcelllink").addClass("fa fa-chevron-up")
+
+        // make all other arrows down except antiragging cell's arrow
+
+        $("i", "#alumnicelllink").addClass("fa fa-chevron-down")
+        $("i", "#placementcelllink").addClass("fa fa-chevron-down")
+        $("i", "#sysadscelllink").addClass("fa fa-chevron-down")
+        $("i", "#facilitationgrouplink").addClass("fa fa-chevron-down")
+
+
+      }
+      else {
+        $("#antiraggingcell").css("display","none");   
+        $("i", "#antiraggingcelllink").removeClass("fa fa-chevron-up")
+        $("i", "#antiraggingcelllink").addClass("fa fa-chevron-down")
+
+      }
+      $("#hodmsg").css("display","none");
+      $("#howtoreach").css("display","none");
+
+      
+    }
+
+    function alumniCell() {
+
+      var flag = $("#alumnicell").css("display");
+      if (flag=="none") {
+        $("#alumnicell").css("display","block");   
+
+        // hide all other div's except alumni cell's div
+
+        $("#antiraggingcell").css("display", "none")
+        $("#placementcell").css("display", "none")
+        $("#sysadscell").css("display", "none")
+        $("#facilitationgroup").css("display", "none")
+        $("#alumnicell").animate({
+          scrollTop: $(window).scrollTop(0)
+        },"slow");
+        
+        $("i", "#alumnicelllink").removeClass("fa fa-chevron-down")
+        $("i", "#alumnicelllink").addClass("fa fa-chevron-up")
+
+        // make all other arrows down except alumni cell's arrow
+        
+        $("i", "#antiraggingcelllink").addClass("fa fa-chevron-down")
+        $("i", "#placementcelllink").addClass("fa fa-chevron-down")
+        $("i", "#sysadscelllink").addClass("fa fa-chevron-down")
+        $("i", "#facilitationgrouplink").addClass("fa fa-chevron-down")
+
+
+      }
+      else {
+        $("#alumnicell").css("display","none");   
+        $("i", "#alumnicelllink").removeClass("fa fa-chevron-up")
+        $("i", "#alumnicelllink").addClass("fa fa-chevron-down")
+
+      }
+
+
+    }
+
+    function placementCell() {
+       var flag = $("#placementcell").css("display");
+      if (flag=="none") {
+        $("#placementcell").css("display","block");   
+
+
+        // hide all other div's except placement cell's div
+
+        $("#antiraggingcell").css("display", "none")
+        $("#alumnicell").css("display", "none")
+        $("#sysadscell").css("display", "none")
+        $("#facilitationgroup").css("display", "none")
+
+        $("#placementcell").animate({
+          scrollTop: $(window).scrollTop(0)
+        },"slow");
+        
+        $("i", "#placementcelllink").removeClass("fa fa-chevron-down")
+        $("i", "#placementcelllink").addClass("fa fa-chevron-up")
+      
+        // make all other arrows down except placemenet cell's arrow
+        
+        $("i", "#antiraggingcelllink").addClass("fa fa-chevron-down")
+        $("i", "#alumnicelllink").addClass("fa fa-chevron-down")
+        $("i", "#sysadscelllink").addClass("fa fa-chevron-down")
+        $("i", "#facilitationgrouplink").addClass("fa fa-chevron-down")
+
+      }
+      else {
+        $("#placementcell").css("display","none");   
+        $("i", "#placementcelllink").removeClass("fa fa-chevron-up")
+        $("i", "#placementcelllink").addClass("fa fa-chevron-down")
+
+      }
+ 
+    }
+
+    function sysaddsCell() {
+      var flag = $("#sysadscell").css("display");
+      if (flag=="none") {
+        $("#sysadscell").css("display","block");   
+          // hide all other div's except sysads cell's div
+     
+        $("#antiraggingcell").css("display", "none")
+        $("#alumnicell").css("display", "none")
+        $("#placementcell").css("display", "none")
+        $("#facilitationgroup").css("display", "none")
+
+
+
+        $("#sysadscell").animate({
+          scrollTop: $(window).scrollTop(0)
+        },"slow");
+        
+        $("i", "#sysadscelllink").removeClass("fa fa-chevron-down")
+        $("i", "#sysadscelllink").addClass("fa fa-chevron-up")
+
+        // make all other arrows down except sysads cell's arrow
+        
+        $("i", "#antiraggingcelllink").addClass("fa fa-chevron-down")
+        $("i", "#alumnicelllink").addClass("fa fa-chevron-down")
+        $("i", "#placementcelllink").addClass("fa fa-chevron-down")
+        $("i", "#facilitationgrouplink").addClass("fa fa-chevron-down")
+
+      }
+      else {
+        $("#sysadscell").css("display","none");   
+        $("i", "#sysadscelllink").removeClass("fa fa-chevron-up")
+        $("i", "#sysadscelllink").addClass("fa fa-chevron-down")
+
+      }
+    }
+
+    function facilitationGroup() {
+      var flag = $("#facilitationgroup").css("display");
+      if (flag=="none") {
+        $("#facilitationgroup").css("display","block");   
+
+        // hide all other div's except facilitationgroup's div
+    
+        $("#antiraggingcell").css("display", "none")
+        $("#alumnicell").css("display", "none")
+        $("#placementcell").css("display", "none")
+        $("#sysadscell").css("display", "none")
+
+
+        $("#facilitationgroup").animate({
+          scrollTop: $(window).scrollTop(0)
+        },"slow");
+        
+        $("i", "#facilitationgrouplink").removeClass("fa fa-chevron-down")
+        $("i", "#facilitationgrouplink").addClass("fa fa-chevron-up")
+
+        // make all other arrows down except facilitationgroup's arrow
+
+        $("i", "#antiraggingcelllink").addClass("fa fa-chevron-down")
+        $("i", "#alumnicelllink").addClass("fa fa-chevron-down")
+        $("i", "#placementcelllink").addClass("fa fa-chevron-down")
+        $("i", "#sysadscelllink").addClass("fa fa-chevron-down")
+
+      }
+      else {
+        $("#facilitationgroup").css("display","none");   
+        $("i", "#facilitationgrouplink").removeClass("fa fa-chevron-up")
+        $("i", "#facilitationgrouplink").addClass("fa fa-chevron-down")
+
+      }
+    }
+
+
+    function admission() {
+      var flag = $("#admission").css("display");
+      if (flag=="none") {
+        $("#admission").css("display","block");   
+
+        // hide all other div's except admission cell's div
+     
+        $("#administration").css("display", "none")
+
+
+
+        $("#admission").animate({
+          scrollTop: $(window).scrollTop(0)
+        },"slow");
+        
+        $("i", "#admissionlink").removeClass("fa fa-chevron-down")
+        $("i", "#admissionlink").addClass("fa fa-chevron-up")
+
+        // make all other arrows down except admission cell's arrow
+        
+        $("i", "#administrationlink").addClass("fa fa-chevron-down")
+
+      }
+      else {
+        $("#admission").css("display","none");   
+        $("i", "#admissionlink").removeClass("fa fa-chevron-up")
+        $("i", "#admissionlink").addClass("fa fa-chevron-down")
+
+      }
+    }
+
+    function administration() {
+      var flag = $("#administration").css("display");
+      if (flag=="none") {
+        $("#administration").css("display","block");   
+
+        // hide all other div's except administration's div
+     
+        $("#admission").css("display", "none")
+
+        $("#administration").animate({
+          scrollTop: $(window).scrollTop(0)
+        },"slow");
+        
+        $("i", "#administrationlink").removeClass("fa fa-chevron-down")
+        $("i", "#administrationlink").addClass("fa fa-chevron-up")
+
+        // make all other arrows down except administration's arrow
+        
+        $("i", "#admissionlink").addClass("fa fa-chevron-down")
+
+      }
+      else {
+        $("#administration").css("display","none");   
+        $("i", "#administrationlink").removeClass("fa fa-chevron-up")
+        $("i", "#administrationlink").addClass("fa fa-chevron-down")
+
+      }
+    }
+
+
+  
   </script>
-
-
 </head>
 
 <body>
