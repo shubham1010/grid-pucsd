@@ -102,6 +102,7 @@ nav ul li a {
   padding: 10px 10px;
   text-decoration: none;
   color: #5E80B9;
+  cursor: pointer;
 }
 
 nav ul li a.active,

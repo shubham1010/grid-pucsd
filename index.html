@@ -2,6 +2,8 @@
 <head>
   <title>Grid Tutorial</title>
 
+  <meta charset="utf-8">
+
   <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap" rel="stylesheet">
 
@@ -12,12 +14,139 @@
   <link rel="stylesheet" href="./css/cells.css">
   <link rel="stylesheet" href="./css/contact.css">
 
-  <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-  <script type="text/javascript" src="./js/load_main_controller.js"></script>
-  <script type="text/javascript" src="./js/about_toggle_controller.js"></script>
-  <script type="text/javascript" src="./js/cells_toggle_controller.js"></script>
-  <script type="text/javascript" src="./js/contact_toggle_controller.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#main").load("https://shubham1010.github.io/jsonfiles/final/about.html");
+
+      $("#about").click(function(){
+        $("#main").load("https://shubham1010.github.io/jsonfiles/final/about.html");
+
+        var ids = $(".active").map(function() {
+          return this.id;
+        }).get();
+       
+        ids = '#'+String(ids)
+        $(ids).removeClass("active");
+
+
+
+        $("#about").addClass("active")
+      });      
+
+
+      $("#academics").click(function(){
+        $("#main").load("https://shubham1010.github.io/jsonfiles/final/academics.html");
+
+        var ids = $(".active").map(function() {
+          return this.id;
+        }).get();
+       
+        ids = '#'+String(ids)
+        $(ids).removeClass("active");
+
+        $("#academics").addClass("active")
+
+      });
+
+      $("#exam").click(function(){
+        $("#main").load("https://shubham1010.github.io/jsonfiles/final/exam.html");
+
+        var ids = $(".active").map(function() {
+          return this.id;
+        }).get();
+       
+        ids = '#'+String(ids)
+        $(ids).removeClass("active");
+
+      
+        $("#exam").addClass("active")
+
+      });
+
+
+
+      $("#facilities").click(function(){
+        $("#main").load("https://shubham1010.github.io/jsonfiles/final/facilities.html");
+
+        var ids = $(".active").map(function() {
+          return this.id;
+        }).get();
+       
+        ids = '#'+String(ids)
+        $(ids).removeClass("active");
+
+
+        $("#facilities").addClass("active")
+      });
+
+      $("#cells").click(function(){
+        $("#main").load("https://shubham1010.github.io/jsonfiles/final/cells.html");
+
+        var ids = $(".active").map(function() {
+          return this.id;
+        }).get();
+       
+        ids = '#'+String(ids)
+        $(ids).removeClass("active");
+
+
+        $("#cells").addClass("active")
+      });
+
+
+      $("#students").click(function(){
+        $("#main").load("https://shubham1010.github.io/jsonfiles/final/students.html");
+
+        var ids = $(".active").map(function() {
+          return this.id;
+        }).get();
+       
+        ids = '#'+String(ids)
+        $(ids).removeClass("active");
+
+
+        $("#students").addClass("active")
+      });
+
+      $("#admissions").click(function(){
+        $("#main").load("https://shubham1010.github.io/jsonfiles/final/admissions.html");
+        var ids = $(".active").map(function() {
+          return this.id;
+        }).get();
+       
+        ids = '#'+String(ids)
+        $(ids).removeClass("active");
+
+
+        $("#admission").addClass("active")
+      });
+      $("#contactus").click(function(){
+        $("#main").load("https://shubham1010.github.io/jsonfiles/final/contactus.html");
+
+        var ids = $(".active").map(function() {
+          return this.id;
+        }).get();
+       
+        ids = '#'+String(ids)
+        $(ids).removeClass("active");
+
+        $("#contactus").addClass("active")
+      });
+/*      
+      $(function() {
+         var allDivs = $(".about")
+        var child = allDivs.children()
+        console.log(child)
+        console.log(child.length)
+        console.log($(".about").html())
+      });
+*/
+
+    });
+
+  </script>
 
 
 </head>
@@ -26,15 +155,16 @@
   <header> 
     <a href="#" class="logo"></a> 
     <nav id="navid">
-        <ul data-controller="load-main" data-action="click->load-main#loadMainData">
-          <li><a href="#about" class="active">About</a></li>
-          <li><a href="#academics">Academics</a></li>
-          <li><a href="#exam">Exam</a></li>
-          <li><a href="#facilities">Facilities</a></li>
-          <li><a href="#cells">Cells</a></li>
-          <li><a href="#students">Students</a></li>
-          <li><a href="#admissions">Admission</a></li>
-          <li><a href="#contactus">Contact</a></li>
+        <ul>
+
+          <li><a id="about" class="active" >About</a></li>
+          <li><a id="academics">Academics</a></li>
+          <li><a id="exam">Exam</a></li>
+          <li><a id="facilities">Facilities</a></li>
+          <li><a id="cells">Cells</a></li>
+          <li><a id="students">Students</a></li>
+          <li><a id="admissions">Admission</a></li>
+          <li><a id="contactus">Contact</a></li>
         </ul>
       </nav>
 
@@ -48,9 +178,9 @@
     <img src="./css/dept.jpg" />
   </div>
 
-  <div id="main" class="main-content" data-target>
-  </div>
 
+  <div id="main" class="main-content">
+  </div>
 
   <div class="slidebar">
       <h3> News & Announcements </h3>
